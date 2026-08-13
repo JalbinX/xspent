@@ -18,13 +18,13 @@
     --brass:#B08D46; --brass-soft:#C9A96B; --line:rgba(43,40,34,0.09); --card:rgba(255,255,255,0.75);
     --text:var(--ink); --text-dim:rgba(43,40,34,0.55);
     --bg1:var(--milk); --bg2:var(--milk-2); --bg3:var(--ash);
-    --green:#5F8C5C; --icon-gold-bg:rgba(176,141,70,0.14); --icon-green-bg:rgba(95,140,92,0.14);
+    --green:#5F8C5C; --icon-gold-bg:#F3E4C8; --icon-green-bg:#DCEBD9;
     --input-bg:#FFFFFF;
   }
   [data-theme="dark"]{
     --bg1:#151412; --bg2:#221F1B; --bg3:#332E27; --text:#EFEAE0; --text-dim:rgba(239,234,224,0.6);
     --card:rgba(255,255,255,0.05); --line:rgba(239,234,224,0.12); --brass:#D4AF6A; --brass-soft:#C9A96B;
-    --green:#7FA07C; --icon-gold-bg:rgba(212,175,106,0.16); --icon-green-bg:rgba(127,160,124,0.16);
+    --green:#7FA07C; --icon-gold-bg:rgba(212,175,106,0.22); --icon-green-bg:rgba(127,160,124,0.22);
     --input-bg:rgba(0,0,0,0.25);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -89,7 +89,7 @@
   .feature-title{font-size:14.5px; font-weight:700;}
   .feature-sub{font-size:12px; color:var(--text-dim); margin-top:2px;}
   .feature-chevron{color:var(--text-dim); font-size:18px;}
-  .card.ai-card{background:var(--icon-gold-bg);}
+  .card.ai-card{background:var(--icon-gold-bg); border-radius:14px; padding:12px 14px; margin:0;}
 
   .empty-state{text-align:center; padding:24px 10px;}
   .empty-state .icon-circle{margin:0 auto 12px;}
@@ -212,9 +212,10 @@
       </div>
     </div>
 
-    <div class="card ai-card">
-      <div class="feature-row" onclick="runAIReview()">
-        <div class="icon-circle gold"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2z"/><path d="M19 14l.7 2.3L22 17l-2.3.7L19 20l-.7-2.3L16 17l2.3-.7L19 14z"/></svg></div>
+    <div class="card">
+      <div class="nav-title" style="margin-bottom:12px;">AI review</div>
+      <div class="feature-row ai-card" onclick="runAIReview()">
+        <div class="icon-circle gold" style="background:#fff;"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2z"/><path d="M19 14l.7 2.3L22 17l-2.3.7L19 20l-.7-2.3L16 17l2.3-.7L19 14z"/></svg></div>
         <div class="feature-text">
           <div class="feature-title" id="aiBtn">Judge my spending this month</div>
           <div class="feature-sub">Get AI insights on your habits and smarter tips.</div>
